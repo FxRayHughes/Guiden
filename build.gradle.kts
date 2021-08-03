@@ -6,9 +6,15 @@ plugins {
 
 taboolib {
     install("common")
+    install("common-5")
+    install("module-chat")
+    install("module-configuration")
+    install("module-database")
+    install("module-ui")
+    install("module-navigation")
     install("platform-bukkit")
     classifier = null
-    version = "6.0.0-pre14"
+    version = "6.0.0-pre23"
 }
 
 repositories {

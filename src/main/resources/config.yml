@@ -1,0 +1,10 @@
+#MYSQL or YAML
+data: MySQL
+#UUID or NAME
+type: UUID
+database:
+  host: 127.0.0.1
+  port: 3306
+  root: root
+  password: 123456789
+  database: minecraft
