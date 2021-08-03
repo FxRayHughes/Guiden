@@ -23,7 +23,6 @@ object GuidenAPI {
         Bukkit.getOnlinePlayers().forEach {
             it.getGuiden()
         }
-        saveTimer()
     }
 
     @Awake(LifeCycle.DISABLE)
@@ -33,20 +32,23 @@ object GuidenAPI {
         }
     }
 
-    fun saveTimer() {
+    @Awake(LifeCycle.ACTIVE)
+    private fun saveTimer() {
         submit(period = 600) {
             save()
         }
     }
 
-    fun get(key: String): GuidenData? {
+    fun get(key: String): GuidenData {
         if (guiden.firstOrNull { it.key == key } == null) {
             val read = Guiden.database.get(key)
             if (read != null) {
                 guiden.add(read)
+            } else {
+                guiden.add(GuidenData(key))
             }
         }
-        return guiden.firstOrNull { it.key == key }
+        return guiden.firstOrNull { it.key == key }!!
     }
 
 }

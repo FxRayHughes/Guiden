@@ -1,13 +1,12 @@
 package ray.mintcat.guiden.data
 
-import com.sun.org.apache.xml.internal.serializer.Serializer
 import java.io.Serializable
 
 
 class GuidenData(
     val key: String,
-    val subs: MutableList<GuidenSub>
-): Serializable {
+    val subs: MutableList<GuidenSub> = mutableListOf()
+) : Serializable {
 
     fun get(key: String, default: String): String {
         return subs.firstOrNull { it.key == key }?.value ?: default
@@ -32,6 +31,7 @@ class GuidenData(
         } else {
             editors.eval(sub, value)
         }
+        GuidenAPI.save()
         return true
     }
 

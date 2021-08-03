@@ -1,19 +1,5 @@
-# Building
+# Guiden
 
-* [Gradle](https://gradle.org/) - Dependency Management
-
-The GradleWrapper in included in this project.
-
-**Windows:**
-
-```
-gradlew.bat clean build
-```
-
-**macOS/Linux:**
-
-```
-./gradlew clean build
-```
-
-Build artifacts should be found in `./build/libs` folder.
++ /guiden get [GuidenKey] [key]
++ /guiden edit [GuidenKey] [key] [editor] [value]
++ /guiden ui (GuidenKey/other) 注：不填为所有变量

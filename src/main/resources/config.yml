@@ -1,7 +1,7 @@
 #MYSQL or YAML
-data: MySQL
+data: YAML
 #UUID or NAME
-type: UUID
+type: NAME
 database:
   host: 127.0.0.1
   port: 3306
